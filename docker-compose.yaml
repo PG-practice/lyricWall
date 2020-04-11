@@ -2,7 +2,11 @@ version: '3.5'
 
 services:
     spring:
-        build: "./spring/"
-        # ports でポートフォワーディングを指定.
+        image: "openjdk:8-jdk-alpine"
+        volumes: 
+            - "./spring:${SPRING_PATH_IN_CONTAINER}"
         ports:
             - "8080:8080"
+        working_dir: ${SPRING_PATH_IN_CONTAINER}
+        # aplineにはbashがなくashを使用
+        command: /bin/ash -c "./gradlew bootRun"
