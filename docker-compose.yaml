@@ -2,11 +2,13 @@ version: '3.5'
 
 services:
     spring:
-        image: "openjdk:8-jdk-alpine"
+        image: "adoptopenjdk/openjdk11:jdk-11.0.6_10-alpine"
         volumes: 
             - "./spring:${SPRING_PATH_IN_CONTAINER}"
         ports:
             - "8080:8080"
+            # デバッグ用ポート
+            - "5050:5050"
         working_dir: ${SPRING_PATH_IN_CONTAINER}
         # aplineにはbashがなくashを使用
         command: /bin/ash -c "./gradlew bootRun"

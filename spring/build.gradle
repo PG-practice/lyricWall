@@ -6,7 +6,7 @@ plugins {
 
 group = 'lyricWallGroup'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 configurations {
 	developmentOnly
@@ -21,6 +21,11 @@ configurations {
 bootJar {
     baseName = 'lyricWallSpring'
     version =  '0.1.0'
+}
+//debug用にgradleがJVMに引数を渡せる必要がある
+bootRun {
+   systemProperties = System.properties
+   jvmArgs=["-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5050"]
 }
 //以上を追加
 repositories {
