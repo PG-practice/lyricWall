@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Insert</title>
+</head>
+<body>
+    <h1 th:text="${title}">title</h1>
+    <h1 th:text="${redirectTitle}">title</h1>
+    <form method="GET" action="#" th:action="@{/lyric/select}" th:object="${searchForm}">
+        <label for="selArtistNameId">Artist Name:</label>
+        <input id="selArtistNameId" name="artistName" type="text" th:value="*{artistName}">
+        <div th:if="${#fields.hasErrors('artistName')}" th:errors="*{artistName}"></div>
+        <input type="submit" value="search">
+    </form>
+    <h1>曲登録</h1>
+    <form method="POST" action="#" th:action="@{/lyric/insert}" th:object="${insertForm}">
+        <label for="insArtistNameId">Artist Name:</label>
+        <input id="insArtistNameId" name="artistName" type="text" th:value="*{artistName}">
+        <div th:if="${#fields.hasErrors('artistName')}" th:errors="*{artistName}"></div>
+        <label for="title">Song Title:</label>
+        <input id="titleId" name="title" type="text" th:value="*{title}">
+        <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+        <label for="wordsWriter">作詞:</label>
+        <input id="wordsWriterId" name="wordsWriter" type="text" th:value="*{wordsWriter}">
+        <label for="musicComposer">作曲:</label>
+        <input id="musicComposerId" name="musicComposer" type="text" th:value="*{musicComposer}">
+        <label for="lyric">歌詞:</label>
+        <input id="lyricId" name="lyric" type="text" th:value="*{lyric}">
+        <label for="url">歌詞URL:</label>
+        <input id="urlId" name="url" type="text" th:value="*{url}">
+        <input type="submit" value="insert">
+    </form>
+    <p th:text="${insertCompleteMessage}"></p>
+    <p th:if="${errorMessage}" th:text="'エラーメッセージ：'+${errorMessage}"></p>
+</body>
+</html>

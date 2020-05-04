@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Insert</title>
+</head>
+<body>
+    <h1 th:text="${title}">title</h1>
+    <p th:text="${noResultMessage}"></p>
+    <table th:if="${lyricList}">
+        <tr>
+            <th>Artist Name</th><th>song title</th><th>lyric</th>
+        </tr>
+        <tr th:each="lyric:${lyricList}">
+            <td th:text="${lyric.artist}"></td>
+            <td th:text="${lyric.title}"></td>
+            <td th:text="${lyric.lyric}"></td>
+        </tr>
+    </table>
+</body>
+</html>

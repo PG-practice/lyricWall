@@ -1,0 +1,3 @@
+INSERT INTO lyricTable (artist, title, words_writer, music_composer, lyric) VALUES ('ポルノグラフィティ', 'Mugen', '新藤晴一', 'ak.homma', 'Ah 幻想とじゃれあって時に傷つくのをあなたは無駄だと笑いますか');
+INSERT INTO lyricTable (artist, title, words_writer, music_composer, lyric) VALUES ('ポルノグラフィティ', 'アゲハ蝶', '新藤晴一', 'ak.homma', 'あなたに会えたそれだけでよかった世界に光が満ちた');
+INSERT INTO lyricTable (artist, title, words_writer, music_composer, lyric) VALUES ('ポルノグラフィティ', 'オー！リバル', '新藤晴一', '岡野昭仁', 'オー！リバル肌を焦がすような南風が吹いた');
